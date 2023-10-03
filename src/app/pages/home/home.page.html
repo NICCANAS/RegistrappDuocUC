@@ -1,0 +1,82 @@
+<ion-header>
+  <ion-toolbar>
+    <img id="imgToolbar" src="assets/img/duocuc-1.png" alt="">
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <div class="p-d-flex p-ai-center" id="divchip">
+    <p-chip id="pWelcome" image="/assets/img/usu.png" class="pWelcome" styleClass="p-chips"
+      label="Bienvenido  {{user}}"></p-chip>
+  </div>
+
+  <ion-card>
+    <img src="assets/img/qrlaser.png" class="imgCard">
+    <ion-card-header>
+      <ion-card-title>Codigo QR</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      Seleccione para escanear codigo QR.
+    </ion-card-content>
+    <br>
+    <ion-button expand="block" color="warning" class="btnHome" (click)="Scanear()" (click)="scanOpciones()">Seleccionar
+    </ion-button>
+  </ion-card>
+
+  <ion-card>
+    <img src="assets/img/calendario1.png" class="imgCard" id="imgPerfil">
+    <ion-accordion-group>
+      <ion-accordion value="first">
+        <ion-item slot="header" color="light">
+          <ion-label>Asistencias</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content" *ngFor="let n of asis">
+          <h2>{{n.asignatura}}</h2>
+          <p>{{n.idAsignatura}}</p>
+          <p>{{n.seccion}}</p>
+          <p>{{n.docente}}</p>
+          <p>{{n.correo}}</p>
+        </div>
+      </ion-accordion>
+    </ion-accordion-group>
+  </ion-card>
+
+  <ion-card class="ion-text-center">
+    <ion-card-header>
+      <ion-card-title>Generacion QR</ion-card-title>
+    </ion-card-header>
+    <div>
+      <qrcode [qrdata]="jsonString" [width]="256" [errorCorrectionLevel]="'M'">
+      </qrcode>
+    </div>
+  </ion-card>
+
+  <ion-card>
+    <img src="assets/img/ajustes.png" class="imgCard" id="imgConf">
+    <ion-card-header>
+      <ion-card-title id="ingCod">Ajustes</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      Seleccione para ingresar a Ajustes.
+    </ion-card-content>
+    <br>
+    <ion-button expand="block" color="warning" class="btnHome" (click)="llevar404()">Seleccionar</ion-button>
+  </ion-card>
+
+  <ion-card>
+    <img src="assets/img/logout.png" class="imgCard" id="imgConf">
+    <ion-card-header>
+      <ion-card-title id="ingCod">Cerrar Sesión</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      Seleccione para Cerrar Sesion.
+    </ion-card-content>
+    <br>
+    <ion-button expand="block" color="warning" class="btnHome" (click)="cerrarSesion()">Seleccionar</ion-button>
+  </ion-card>
+
+</ion-content>

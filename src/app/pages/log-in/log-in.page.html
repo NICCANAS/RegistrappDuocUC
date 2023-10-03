@@ -1,0 +1,21 @@
+<ion-content [fullscreen]="true">
+  <img src="assets/img/Logo1.png" alt="Duoc" id="imgLogo" class="imgLogo">
+  
+  <strong class="centrado" id="strongLogin">Inicio de Sesion</strong>
+
+  <ion-item id="UserInput">
+    <ion-label position="floating">Usuario</ion-label>
+    <ion-input type="text" [(ngModel)]="user.Usuario" minlength="8" maxlength="30"></ion-input>
+  </ion-item>
+
+  <ion-item id="ClaveInput">
+    <ion-label position="floating">Contraseña</ion-label>
+    <ion-input type="password" [(ngModel)]="user.Clave" minlength="5" maxlength="16"></ion-input>
+  </ion-item>
+  <br>
+  <ion-button expand="block" color="warning" id="btnLogIn" (click)="nextPageHome()" >Entrar</ion-button>
+  <br>
+  <p class="centrado"><a (click)="nextPageRecup()">Recuperar Contraseña</a></p>
+  <br>
+  <img src="assets/img/duocuc-1.png" alt="Duoc" id="imgDuoc">
+</ion-content>

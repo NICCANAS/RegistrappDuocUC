@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <img id="imgToolbar" src="assets/img/duocuc-1.png" alt="">
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <strong class="centrado" id="strongRecup" #strRecup>Recuperar Contraseña</strong>
+
+  <ion-item id="UserInput">
+    <ion-label position="floating">Usuario</ion-label>
+    <ion-input type="text" [(ngModel)]="Usuario" minlength="8" maxlength="30"></ion-input>
+  </ion-item>
+  <br>
+  <ion-button expand="block" color="warning" id="btn" (click)="backPageLogin()" >Recuperar</ion-button>
+
+  <p class="centrado" id="inf"><ion-icon name="alert-circle" id="iconInf"></ion-icon> Informacion: </p>
+  <p id="infBody">Se le enviara un correo con los pasos necesarios para recuperar su contraseña.</p>
+
+</ion-content>
